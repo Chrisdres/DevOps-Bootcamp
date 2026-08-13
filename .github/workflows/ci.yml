@@ -1,4 +1,4 @@
-name: Mi primer CI
+name: Docker CI
 
 on:
   push:
@@ -6,9 +6,12 @@ on:
       - main
 
 jobs:
-  saludo:
+  docker:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Mostrar mensaje
-        run: echo "¡Mi primer GitHub Action funciona!"
+      - name: Obtener código
+        uses: actions/checkout@v4
+
+      - name: Construir imagen Docker
+        run: docker build -t mi-app .
