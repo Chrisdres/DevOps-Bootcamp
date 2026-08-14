@@ -15,3 +15,6 @@ jobs:
 
       - name: Construir imagen Docker
         run: docker build -t mi-app .
+
+      - name: Simular deployment
+        run: echo "🚀 Deploy realizado correctamente"
